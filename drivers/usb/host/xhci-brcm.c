@@ -9,6 +9,7 @@
 #include <usb.h>
 #include <asm/io.h>
 #include <usb/xhci.h>
+#include <dm/device_compat.h>
 
 #define DRD2U3H_XHC_REGS_AXIWRA	0xC08
 #define DRD2U3H_XHC_REGS_AXIRDA	0xC0C
@@ -82,6 +83,7 @@ static int xhci_brcm_deregister(struct udevice *dev)
 
 static const struct udevice_id xhci_brcm_ids[] = {
 	{ .compatible = "brcm,generic-xhci" },
+	{ .compatible = "generic-xhci" },
 	{ }
 };
 
